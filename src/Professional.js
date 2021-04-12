@@ -7,7 +7,7 @@ const Professional = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   const getUsers = async () => {
-    await Axios.get("https://dev.perfectprof.com/api/search").then(
+    await Axios.get("https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/search").then(
       (response) => {
         setData(response.data.data);
       }
@@ -21,7 +21,7 @@ const Professional = () => {
   const handleClick = (e, id) => {
     e.preventDefault();
 
-    Axios.get("https://dev.perfectprof.com/api/professional-profile?slug=" + id)
+    Axios.get("https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/professional-profile?slug=" + id)
     .then((res) => {
       setData1(res.data.data);
       setIsEdit({ isEdit: false });

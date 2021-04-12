@@ -24,7 +24,7 @@ const Professional_detail = (props) => {
             <div className="col-md-4">
               <img
                 src={
-                  "https://dev.perfectprof.com/storage/app/" +data1.profile_pic
+                  "https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/storage/app/" +data1.profile_pic
                 }
                 alt="..." width='480px' height='390px'
               />
