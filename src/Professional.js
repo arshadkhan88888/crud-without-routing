@@ -22,7 +22,7 @@ const Professional = () => {
     e.preventDefault();
 
     Axios.get(
-      "https://dev.perfectprof.com/api/professional-profile?slug=" + id
+      `https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/professional-profile?slug=${id}` 
     ).then((res) => {
       setData1(res.data.data);
       setIsEdit({ isEdit: false });
