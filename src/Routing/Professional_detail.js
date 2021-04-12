@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
 import { FacebookButton, FacebookCount, LinkedInButton, TwitterButton } from "react-social";
 import {FacebookIcon, LinkedinIcon, TwitterIcon} from 'react-share'
+import { Helmet } from "react-helmet";
 
 const Professional_detail = (props) => {
   const [data1, setData1] = useState([]);
@@ -58,10 +59,11 @@ const Professional_detail = (props) => {
         <FacebookButton  url={url} appId={264765292010240}>
           <FacebookIcon size='35' round={true}/>
           </FacebookButton>
-          
+        
          <LinkedInButton url={url} Client ID={'864k3totrdnv64'}>
           <LinkedinIcon size='35' round={true}/>
-      </LinkedInButton>
+          </LinkedInButton>
+          
 
         </div>
         <Link to="/" className="btn btn-warning">
