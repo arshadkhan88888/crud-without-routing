@@ -1,5 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
+import cors from 'cors'
 
 const Professional = () => {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ const Professional = () => {
 
   const getUsers = async () => {
     await Axios.get(
-      "https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/search"
+      "https://dev.perfectprof.com/api/search"
     ).then((response) => {
       setData(response.data.data);
     });
@@ -22,7 +23,7 @@ const Professional = () => {
     e.preventDefault();
 
     Axios.get(
-      `https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/professional-profile?slug=${id}` 
+      `https://dev.perfectprof.com/api/professional-profile?slug=${id}` 
     ).then((res) => {
       setData1(res.data.data);
       setIsEdit({ isEdit: false });

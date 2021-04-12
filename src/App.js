@@ -1,9 +1,8 @@
 import React from 'react';
-import Professional from './Professional';
-import 'react-app-polyfill/stable'
 import Professinal_list from './Routing/Professional_list';
 import Professional_detail from './Routing/Professional_detail';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import cors from 'cors'
 
 const App = () => {
   return (
