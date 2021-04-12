@@ -69,7 +69,7 @@ const Professional = () => {
               <div className="card-body">
                 <h4>{data1.professional.email}</h4>
                 <h6>{data1.professional.ip}</h6>
-                <h6>{data1["subject_names"]}</h6>
+                <h3>{data1["subject_names"]}</h3>
 
                 <button
                   type="button"
