@@ -1,18 +1,19 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import cors from 'cors'
+import ReactShareSocial from "react-share-social";
 
 const Professional = () => {
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
 
+
   const getUsers = async () => {
-    await Axios.get(
-      "https://dev.perfectprof.com/api/search"
-    ).then((response) => {
-      setData(response.data.data);
-    });
+    await Axios.get("https://dev.perfectprof.com/api/search").then(
+      (response) => {
+        setData(response.data.data);
+      }
+    );
   };
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const Professional = () => {
     e.preventDefault();
 
     Axios.get(
-      `https://dev.perfectprof.com/api/professional-profile?slug=${id}` 
+      `https://dev.perfectprof.com/api/professional-profile?slug=${id}`
     ).then((res) => {
       setData1(res.data.data);
       setIsEdit({ isEdit: false });
@@ -70,6 +71,13 @@ const Professional = () => {
                 <h4>{data1.professional.email}</h4>
                 <h6>{data1.professional.ip}</h6>
                 <h3>{data1["subject_names"]}</h3>
+
+                <span>
+                  <ReactShareSocial
+                    url={  `https://alkurntech-reactjs.herokuapp.com/slug=${data1.id}`}
+                    socialTypes={["facebook", "twitter", "reddit", "linkedin"]}
+                  />
+                </span>
 
                 <button
                   type="button"

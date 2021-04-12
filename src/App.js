@@ -12,7 +12,7 @@ const App = () => {
         <h1>Task</h1>
         <Router>
           <Route exact path='/' component={Professinal_list}/>
-          <Route exact path='/social/:slug' component={Professional_detail}/>
+          <Route exact path='/social/:id' component={Professional_detail}/>
         </Router>
       </div>
     </div>

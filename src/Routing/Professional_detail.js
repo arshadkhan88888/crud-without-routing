@@ -1,14 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
+import ReactShareSocial from "react-share-social";
 
 const Professional_detail = (props) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
 
+  let url=`https://alkurntech-reactjs.herokuapp.com/social/?slug=${props.match.params.id}`
+
   useEffect(() => {
     axios
-      .get(`https://dev.perfectprof.com/api/professional-profile?slug=${props.match.params.slug}`)
+      .get(`https://dev.perfectprof.com/api/professional-profile?slug=${props.match.params.id}`)
       .then((res) => {
         setData1(res.data.data.professional);
         setData2(res.data.data);
@@ -50,6 +53,10 @@ const Professional_detail = (props) => {
             <h6>{data2.subject_names}</h6>
           </div>
         </div>
+        <ReactShareSocial
+                    url={url}
+                    socialTypes={["facebook", "twitter","linkedin"]}
+                  />
         <Link to="/" className="btn btn-warning">
           Go Back
         </Link>
