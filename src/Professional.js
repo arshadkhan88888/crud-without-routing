@@ -7,11 +7,11 @@ const Professional = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   const getUsers = async () => {
-    await Axios.get("https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/search").then(
-      (response) => {
-        setData(response.data.data);
-      }
-    );
+    await Axios.get(
+      "https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/search"
+    ).then((response) => {
+      setData(response.data.data);
+    });
   };
 
   useEffect(() => {
@@ -21,8 +21,9 @@ const Professional = () => {
   const handleClick = (e, id) => {
     e.preventDefault();
 
-    Axios.get("https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/professional-profile?slug=" + id)
-    .then((res) => {
+    Axios.get(
+      "https://dev.perfectprof.com/api/professional-profile?slug=" + id
+    ).then((res) => {
       setData1(res.data.data);
       setIsEdit({ isEdit: false });
     });
@@ -60,9 +61,7 @@ const Professional = () => {
                   <small className="text-muted">
                     {data1.professional.gender}
                   </small>
-                  <small className="text-muted">
-                    {data1.city}
-                  </small>
+                  <small className="text-muted">{data1.city}</small>
                 </p>
               </div>
 

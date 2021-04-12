@@ -6,7 +6,7 @@ const Professinal_list = () => {
     const [data, setData] = useState([]);
     const getUsers = async () => {
     
-        await axios.get("https://cors-anywhere.herokuapp.com/https://dev.perfectprof.com/api/search").then(
+        await axios.get("https://dev.perfectprof.com/api/search").then(
           (response) => {
             setData(response.data.data);
           }
