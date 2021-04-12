@@ -1,19 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
-import { FacebookButton, FacebookCount, LinkedInButton, TwitterButton } from "react-social";
-import {FacebookIcon, LinkedinIcon, TwitterIcon} from 'react-share'
+import { Link } from "react-router-dom";
+import {
+  FacebookButton,
+  FacebookCount,
+  LinkedInButton,
+  TwitterButton,
+} from "react-social";
+import { FacebookIcon, LinkedinIcon, TwitterIcon } from "react-share";
 import { Helmet } from "react-helmet";
 
 const Professional_detail = (props) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
 
-  let url=`https://alkurntech-reactjs.herokuapp.com/social/${props.match.params.id}`
+  let url = `https://alkurntech-reactjs.herokuapp.com/social/${props.match.params.id}`;
 
   useEffect(() => {
     axios
-      .get(`https://dev.perfectprof.com/api/professional-profile?slug=${props.match.params.id}`)
+      .get(
+        `https://dev.perfectprof.com/api/professional-profile?slug=${props.match.params.id}`
+      )
       .then((res) => {
         setData1(res.data.data.professional);
         setData2(res.data.data);
@@ -22,16 +29,33 @@ const Professional_detail = (props) => {
 
   return (
     <div>
-      
+      <Helmet>
+        <title>Alkurn-Tech</title>
+        <meta property="og:title" content={data1.first_name.last_name} />
+        <meta property="og:description" content={data2.subject_names} />
+        <meta
+          property="og:url"
+          content="https://alkurntech-reactjs-1st.herokuapp.com/"
+        />
+        <meta property="og:site_name" content="alkurntech-reactjs-1st" />
+        <meta
+          property="og:image"
+          content={"https://dev.perfectprof.com/storage/app/" + data1.profile_pic}
+        />
+        <meta property="fb:app_id" content="264765292010240" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div style={{ paddingLeft: "210px" }}>
         <div className="card mb-3" style={{ width: "11rem" }}>
           <div className="row g-0">
             <div className="col-md-4">
               <img
                 src={
-                  "https://dev.perfectprof.com/storage/app/" +data1.profile_pic
+                  "https://dev.perfectprof.com/storage/app/" + data1.profile_pic
                 }
-                alt="..." width='480px' height='390px'
+                alt="..."
+                width="480px"
+                height="390px"
               />
             </div>
           </div>
@@ -55,16 +79,14 @@ const Professional_detail = (props) => {
             <h6>{data2.subject_names}</h6>
           </div>
         </div>
-        <div className='col-md-4' style={{bottom:'14px'}}>
-        <FacebookButton  url={url} appId={264765292010240}>
-          <FacebookIcon size='35' round={true}/>
+        <div className="col-md-4" style={{ bottom: "14px" }}>
+          <FacebookButton url={url} appId={264765292010240}>
+            <FacebookIcon size="35" round={true} />
           </FacebookButton>
-        
-         <LinkedInButton url={url} Client ID={'864k3totrdnv64'}>
-          <LinkedinIcon size='35' round={true}/>
-          </LinkedInButton>
-          
 
+          <LinkedInButton url={url} Client ID={"864k3totrdnv64"}>
+            <LinkedinIcon size="35" round={true} />
+          </LinkedInButton>
         </div>
         <Link to="/" className="btn btn-warning">
           Go Back
