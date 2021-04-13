@@ -14,7 +14,7 @@ const Professional_detail = (props) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
 
-  let url = `https://alkurntech-reactjs.herokuapp.com/social/${props.match.params.id}`;
+  let url = `https://alkurntech-reactjs.herokuapp-1st.com/social/${props.match.params.id}`;
 
   useEffect(() => {
     axios
