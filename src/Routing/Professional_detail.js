@@ -39,7 +39,7 @@ const Professional_detail = (props) => {
         content="https://alkurntech-reactjs-1st.herokuapp.com/"
       />
       <meta
-        property="og:image"
+        property="og:image:secure_url"
         content={'https://dev.perfectprof.com/storage/app/' +data1.profile_pic}
       />
       <meta property="fb:app_id" content="264765292010240" />
