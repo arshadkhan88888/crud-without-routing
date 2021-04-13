@@ -29,8 +29,22 @@ const Professional_detail = (props) => {
 
   return (
     <div>
-     
-        
+      <Helmet>
+
+      <title>Alkurn-Tech</title>
+      <meta property="og:title" content={data1.first_name} />
+      <meta property="og:description" content={data2.subject_names} />
+        <meta
+        property="og:url"
+        content="https://alkurntech-reactjs-1st.herokuapp.com/"
+      />
+      <meta
+        property="og:image"
+        content={'https://dev.perfectprof.com/storage/app/' +data1.profile_pic}
+      />
+      <meta property="fb:app_id" content="264765292010240" />
+      <meta property="og:type" content="website" />
+      </Helmet>
         
       <div style={{ paddingLeft: "210px" }}>
         <div className="card mb-3" style={{ width: "11rem" }}>
