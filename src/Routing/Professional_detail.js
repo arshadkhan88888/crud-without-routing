@@ -44,7 +44,7 @@ const Professional_detail = (props) => {
       <meta property="og:description" content={data2.subject_names} />
         <meta
         property="og:url"
-        content="https://alkurntech-reactjs.1st.herokuapp.com/social/"
+        content="https://alkurntech-reactjs.1st.herokuapp.com/"
       />
       <meta
         
