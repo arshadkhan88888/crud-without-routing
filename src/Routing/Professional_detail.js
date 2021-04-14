@@ -14,7 +14,7 @@ const Professional_detail = (props) => {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
 
-  let url = `https://alkurntech-reactjs.herokuapp.com/social/${props.match.params.id}`;
+  let url = `https://alkurntech-reactjs.1st.herokuapp.com/social/${props.match.params.id}`;
 
   useEffect(() => {
     axios
@@ -29,18 +29,25 @@ const Professional_detail = (props) => {
 
   return (
     <div>
-      <Helmet>
+      <Helmet
+        title={data1.first_name}
+        meta={[
+          { property: "og:title", content:data1.first_name },
+          {
+           property:"og:image:secure_url",
+        content:'https://dev.perfectprof.com/storage/app/'+data1.profile_pic
+          }]}
+      >
 
       <title>Alkurn-Tech</title>
-      <meta property="og:title" content={data1.first_name} />
+      <meta  />
       <meta property="og:description" content={data2.subject_names} />
         <meta
         property="og:url"
-        content="https://alkurntech-reactj.herokuapp.com/"
+        content="https://alkurntech-reactjs.1st.herokuapp.com/social/"
       />
       <meta
-        property="og:image:secure_url"
-        content={'https://dev.perfectprof.com/storage/app/' +data1.profile_pic}
+        
       />
       <meta property="fb:app_id" content="264765292010240" />
       <meta property="og:type" content="website" />
