@@ -29,18 +29,11 @@ const Professional_detail = (props) => {
 
   return (
     <div>
-      <Helmet
-        title={data1.first_name}
-        meta={[
-          { property: "og:title", content:data1.first_name },
-          {
-           property:"og:image:secure_url",
-        content:'https://dev.perfectprof.com/storage/app/'+data1.profile_pic
-          }]}
-      >
-
-      <title>Alkurn-Tech</title>
-      <meta  />
+      <Helmet>
+        <title>{ data1.first_name}</title>
+        <meta property="og:title" content={data1.first_name}/>
+        <meta property="og:image" content={"https://dev.perfectprof.com/storage/app/" + data1.profile_pic}/>
+        <meta property="og:image:secure_url" content={"https://dev.perfectprof.com/storage/app/" + data1.profile_pic}/>
       <meta property="og:description" content={data2.subject_names} />
         <meta
         property="og:url"
