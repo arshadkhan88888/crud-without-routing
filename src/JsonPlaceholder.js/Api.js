@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FacebookIcon } from 'react-share';
 import {FacebookButton} from "react-social";
 
@@ -7,6 +8,8 @@ const Api = () => {
 
     const [list, setList] = useState([])
     
+    let url ='https://fake-api-placeholder.herokuapp.com/'
+
     useEffect(()=> {
         restApi()
     }, [])
@@ -19,6 +22,7 @@ const Api = () => {
     return (
         <div>
             <h1>Json PlaceHolder</h1>
+            
             <table className='table table-bordered table-info'>
                 <thead>
                 <tr>
@@ -38,6 +42,9 @@ const Api = () => {
                                 <td>{ele.title}</td>
                                 <td>{ele.url}</td>
                                 <td><img src={ele.thumbnailUrl} /></td>
+                                <td> <FacebookButton url={url} appId={264765292010240}>
+                                <FacebookIcon size="35" round={true} />
+                                </FacebookButton></td>
                             </tr>
                         )
                 }
