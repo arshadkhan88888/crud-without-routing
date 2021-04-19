@@ -12,10 +12,10 @@ const Api = () => {
 
     useEffect(()=> {
         restApi()
-    }, [])
+    },[list])
     
-    const restApi = async() => {
-        await axios.get('https://jsonplaceholder.typicode.com/photos')
+    const restApi = () => {
+        axios.get('https://jsonplaceholder.typicode.com/photos')
         .then((res)=>{setList(res.data)})
     }
 
@@ -36,6 +36,7 @@ const Api = () => {
                 <tbody>
                     {
                         list.map((ele) =>
+                            
                             <tr>
                                 <td>{ele.albumId}</td>
                                 <td>{ele.id}</td>
@@ -45,6 +46,10 @@ const Api = () => {
                                 <td> <FacebookButton url={url} appId={264765292010240}>
                                 <FacebookIcon size="35" round={true} />
                                 </FacebookButton></td>
+                                <Helmet>
+                                <title>{ ele.title}</title>
+                                <meta property="og:title" content={ele.title}/>
+                                </Helmet>
                             </tr>
                         )
                 }
