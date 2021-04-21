@@ -49,6 +49,7 @@ const Api = () => {
                                 <Helmet>
                                 <title>{ ele.title}</title>
                                 <meta property="og:title" content={ele.title}/>
+                                <meta property="og:image" content={ele.thumbnailUrl}/>
                                 </Helmet>
                             </tr>
                         )
