@@ -25,8 +25,7 @@ const Professinal_list = () => {
                 <div className="card-group">
                   <div className="card">
                     <div className="card" style={{ width: "18rem" }}>
-                      <img
-                        src={
+                      <img src={
                           "https://dev.perfectprof.com/storage/app/" +
                           obj.professional[`profile_pic`]
                         }
